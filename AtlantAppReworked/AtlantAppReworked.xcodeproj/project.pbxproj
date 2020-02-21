@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		006BAA3023EE7668004A1110 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006BAA2E23EE7668004A1110 /* LaunchScreen.storyboard */; };
 		00FE283D23EE9CB500ABF338 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE283C23EE9CB500ABF338 /* SettingsViewController.swift */; };
 		00FE283F23EEA15B00ABF338 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE283E23EEA15B00ABF338 /* EventsTableViewController.swift */; };
+		6670C4F77E4033E9D13BF07B /* Pods_AtlantAppReworked.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C4B085C7B2FE4D6B276A2 /* Pods_AtlantAppReworked.framework */; };
+		841BC13323FBD98600C1330E /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BC13223FBD98600C1330E /* Charts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		006BAA3123EE7668004A1110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00FE283C23EE9CB500ABF338 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		00FE283E23EEA15B00ABF338 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		586C4B085C7B2FE4D6B276A2 /* Pods_AtlantAppReworked.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtlantAppReworked.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		841BC13223FBD98600C1330E /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
+		F4C9263A63B38112AFAD5B01 /* Pods-AtlantAppReworked.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtlantAppReworked.debug.xcconfig"; path = "Target Support Files/Pods-AtlantAppReworked/Pods-AtlantAppReworked.debug.xcconfig"; sourceTree = "<group>"; };
+		F7AE0FBD5AAADAAC37ED3090 /* Pods-AtlantAppReworked.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtlantAppReworked.release.xcconfig"; path = "Target Support Files/Pods-AtlantAppReworked/Pods-AtlantAppReworked.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6670C4F77E4033E9D13BF07B /* Pods_AtlantAppReworked.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				006BAA1F23EE7668004A1110 /* AtlantAppReworked */,
 				006BAA1E23EE7668004A1110 /* Products */,
+				14EEE0C7D11ED74246811692 /* Pods */,
+				E2B04BED82D0E9BF19CECBE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +73,7 @@
 			children = (
 				006BAA2023EE7668004A1110 /* AppDelegate.swift */,
 				006BAA2223EE7668004A1110 /* SceneDelegate.swift */,
+				841BC13223FBD98600C1330E /* Charts.swift */,
 				006BAA2423EE7668004A1110 /* ViewController.swift */,
 				00FE283C23EE9CB500ABF338 /* SettingsViewController.swift */,
 				00FE283E23EEA15B00ABF338 /* EventsTableViewController.swift */,
@@ -76,6 +86,23 @@
 			path = AtlantAppReworked;
 			sourceTree = "<group>";
 		};
+		14EEE0C7D11ED74246811692 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4C9263A63B38112AFAD5B01 /* Pods-AtlantAppReworked.debug.xcconfig */,
+				F7AE0FBD5AAADAAC37ED3090 /* Pods-AtlantAppReworked.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2B04BED82D0E9BF19CECBE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				586C4B085C7B2FE4D6B276A2 /* Pods_AtlantAppReworked.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 006BAA3423EE7668004A1110 /* Build configuration list for PBXNativeTarget "AtlantAppReworked" */;
 			buildPhases = (
+				33D435D1685D75FE215B7A66 /* [CP] Check Pods Manifest.lock */,
 				006BAA1923EE7668004A1110 /* Sources */,
 				006BAA1A23EE7668004A1110 /* Frameworks */,
 				006BAA1B23EE7668004A1110 /* Resources */,
+				900673D4D21124B31A4CF648 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +171,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		33D435D1685D75FE215B7A66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AtlantAppReworked-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		900673D4D21124B31A4CF648 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AtlantAppReworked/Pods-AtlantAppReworked-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AtlantAppReworked/Pods-AtlantAppReworked-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AtlantAppReworked/Pods-AtlantAppReworked-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		006BAA1923EE7668004A1110 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -151,6 +222,7 @@
 				006BAA2123EE7668004A1110 /* AppDelegate.swift in Sources */,
 				006BAA2B23EE7668004A1110 /* AtlantAppReworked.xcdatamodeld in Sources */,
 				00FE283D23EE9CB500ABF338 /* SettingsViewController.swift in Sources */,
+				841BC13323FBD98600C1330E /* Charts.swift in Sources */,
 				006BAA2323EE7668004A1110 /* SceneDelegate.swift in Sources */,
 				00FE283F23EEA15B00ABF338 /* EventsTableViewController.swift in Sources */,
 			);
@@ -294,6 +366,7 @@
 		};
 		006BAA3523EE7668004A1110 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4C9263A63B38112AFAD5B01 /* Pods-AtlantAppReworked.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,6 +385,7 @@
 		};
 		006BAA3623EE7668004A1110 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7AE0FBD5AAADAAC37ED3090 /* Pods-AtlantAppReworked.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

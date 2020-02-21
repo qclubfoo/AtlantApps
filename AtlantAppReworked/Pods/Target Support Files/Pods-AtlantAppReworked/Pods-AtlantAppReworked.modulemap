@@ -1,0 +1,6 @@
+framework module Pods_AtlantAppReworked {
+  umbrella header "Pods-AtlantAppReworked-umbrella.h"
+
+  export *
+  module * { export * }
+}
