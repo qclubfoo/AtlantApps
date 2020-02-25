@@ -51,6 +51,7 @@ class ChartsViewController: UIViewController {
         button.backgroundColor = UIColor(red: 255/255, green: 221/255, blue: 45/255, alpha: 1)
         button.setTitleColor(UIColor(red: 48/255, green: 48/255, blue: 56/255, alpha: 1), for: .normal)
         button.setTitle("Отобразить", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
     }
    
     private func setupYearPicker(picker: UIPickerView) {

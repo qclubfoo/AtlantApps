@@ -20,6 +20,14 @@
 		841BC1EF23FFFDA000C1330E /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BC1EE23FFFDA000C1330E /* ChartView.swift */; };
 		841BC1F1240024A500C1330E /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BC1F0240024A500C1330E /* NewsView.swift */; };
 		841BC1F3240024E900C1330E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BC1F2240024E900C1330E /* NewsViewController.swift */; };
+		8422D4F124054649000EE5FE /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4F024054649000EE5FE /* NewsItem.swift */; };
+		8422D4F324054728000EE5FE /* NewsOfPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4F224054728000EE5FE /* NewsOfPeriod.swift */; };
+		8422D4F52405487E000EE5FE /* GroupOfNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4F42405487E000EE5FE /* GroupOfNews.swift */; };
+		8422D4F924054EC0000EE5FE /* AdditionalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4F824054EC0000EE5FE /* AdditionalTextView.swift */; };
+		8422D4FB24054F46000EE5FE /* AdditionalTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4FA24054F46000EE5FE /* AdditionalTextViewController.swift */; };
+		8422D4FD24056F4E000EE5FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4FC24056F4E000EE5FE /* LoginView.swift */; };
+		8422D4FF24056F94000EE5FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4FE24056F94000EE5FE /* LoginViewController.swift */; };
+		8422D50124057603000EE5FE /* CellWithoutExtraText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D50024057603000EE5FE /* CellWithoutExtraText.swift */; };
 		CE300CB316D4269BF3C0CAE5 /* Pods_NewAtlantApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4401BC0FC26200D1C6F3A83 /* Pods_NewAtlantApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +49,14 @@
 		841BC1EE23FFFDA000C1330E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		841BC1F0240024A500C1330E /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		841BC1F2240024E900C1330E /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		8422D4F024054649000EE5FE /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		8422D4F224054728000EE5FE /* NewsOfPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsOfPeriod.swift; sourceTree = "<group>"; };
+		8422D4F42405487E000EE5FE /* GroupOfNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupOfNews.swift; sourceTree = "<group>"; };
+		8422D4F824054EC0000EE5FE /* AdditionalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalTextView.swift; sourceTree = "<group>"; };
+		8422D4FA24054F46000EE5FE /* AdditionalTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalTextViewController.swift; sourceTree = "<group>"; };
+		8422D4FC24056F4E000EE5FE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8422D4FE24056F94000EE5FE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8422D50024057603000EE5FE /* CellWithoutExtraText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithoutExtraText.swift; sourceTree = "<group>"; };
 		C4401BC0FC26200D1C6F3A83 /* Pods_NewAtlantApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewAtlantApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,9 +114,11 @@
 		841BC1E323FFF18100C1330E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				841BC1A923FD5BAA00C1330E /* ChartsViewController.swift */,
-				841BC1F2240024E900C1330E /* NewsViewController.swift */,
+				8422D4FE24056F94000EE5FE /* LoginViewController.swift */,
 				841BC1E123FFF08D00C1330E /* TabBarViewController.swift */,
+				841BC1F2240024E900C1330E /* NewsViewController.swift */,
+				8422D4FA24054F46000EE5FE /* AdditionalTextViewController.swift */,
+				841BC1A923FD5BAA00C1330E /* ChartsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,6 +130,9 @@
 				841BC1B023FD5BAB00C1330E /* LaunchScreen.storyboard */,
 				841BC1EE23FFFDA000C1330E /* ChartView.swift */,
 				841BC1F0240024A500C1330E /* NewsView.swift */,
+				8422D4FC24056F4E000EE5FE /* LoginView.swift */,
+				8422D4F824054EC0000EE5FE /* AdditionalTextView.swift */,
+				8422D50024057603000EE5FE /* CellWithoutExtraText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,9 +158,12 @@
 		841BC1E723FFF48C00C1330E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				841BC1E823FFF4D900C1330E /* MetrickData.swift */,
-				841BC1EA23FFF57C00C1330E /* Metrick.swift */,
 				841BC1EC23FFF7B600C1330E /* MetricksGroup.swift */,
+				841BC1EA23FFF57C00C1330E /* Metrick.swift */,
+				841BC1E823FFF4D900C1330E /* MetrickData.swift */,
+				8422D4F024054649000EE5FE /* NewsItem.swift */,
+				8422D4F224054728000EE5FE /* NewsOfPeriod.swift */,
+				8422D4F42405487E000EE5FE /* GroupOfNews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,12 +294,20 @@
 				841BC1E223FFF08D00C1330E /* TabBarViewController.swift in Sources */,
 				841BC1EB23FFF57C00C1330E /* Metrick.swift in Sources */,
 				841BC1AA23FD5BAA00C1330E /* ChartsViewController.swift in Sources */,
+				8422D4FB24054F46000EE5FE /* AdditionalTextViewController.swift in Sources */,
 				841BC1F3240024E900C1330E /* NewsViewController.swift in Sources */,
+				8422D4F924054EC0000EE5FE /* AdditionalTextView.swift in Sources */,
 				841BC1F1240024A500C1330E /* NewsView.swift in Sources */,
 				841BC1A623FD5BAA00C1330E /* AppDelegate.swift in Sources */,
+				8422D4F52405487E000EE5FE /* GroupOfNews.swift in Sources */,
 				841BC1ED23FFF7B600C1330E /* MetricksGroup.swift in Sources */,
 				841BC1E923FFF4D900C1330E /* MetrickData.swift in Sources */,
+				8422D4F124054649000EE5FE /* NewsItem.swift in Sources */,
 				841BC1A823FD5BAA00C1330E /* SceneDelegate.swift in Sources */,
+				8422D4FF24056F94000EE5FE /* LoginViewController.swift in Sources */,
+				8422D50124057603000EE5FE /* CellWithoutExtraText.swift in Sources */,
+				8422D4F324054728000EE5FE /* NewsOfPeriod.swift in Sources */,
+				8422D4FD24056F4E000EE5FE /* LoginView.swift in Sources */,
 				841BC1EF23FFFDA000C1330E /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

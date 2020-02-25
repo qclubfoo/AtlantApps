@@ -8,26 +8,9 @@
 
 import UIKit
 
-class NewsClass {
-    let month: String
-    let news: [String]
-    
-    init(month: String, news: [String]) {
-        self.month = month
-        self.news = news
-    }
-}
-
 class NewsViewController: UIViewController {
     
-    var news: [NewsClass] {
-       [
-        NewsClass(month: "Январь 2020", news: ["Сделали много лидов", "Открыли Саратов"]),
-        NewsClass(month: "Февраль 2020", news: ["Вышли на плановую прибыль", "Открыли Липецк"]),
-        NewsClass(month: "Март 2020", news: ["Инвесотры получили первую прибыль", "Получили новый поток инвестиций"]),
-        NewsClass(month: "Апрель 2020", news: ["Расширяемся огромными темпами"]),
-        ]
-    }
+    var groupOfNews = GroupOfNews()
     
     public var newsView: NewsView! {
         guard isViewLoaded else { return nil }
@@ -58,24 +41,53 @@ class NewsViewController: UIViewController {
 extension NewsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        news.count
+        groupOfNews.news.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        news[section].news.count
+        groupOfNews.news[section].newsItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "newsCell")
-        cell.textLabel?.text = news[indexPath.section].news[indexPath.row]
+        let text = groupOfNews.news[indexPath.section].newsItems[indexPath.row].newsTitle
+        let additionalText = groupOfNews.news[indexPath.section].newsItems[indexPath.row].additionalText
+        let cell: UITableViewCell
+        
+        cell = getCell(withText: text, withAddtitionalText: additionalText, inTableView: tableView)
         return cell
     }
     
+    func getCell(withText text: String, withAddtitionalText additionalText: String?, inTableView tableView: UITableView) -> UITableViewCell {
+        if additionalText != nil {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellWithExtraText") else { return UITableViewCell() }
+            cell.detailTextLabel?.text = "Нажмите на ячейку для дополнительной информации"
+            cell.textLabel?.text = text
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellWithoutExtraText") as? CellWithoutExtraText else { return UITableViewCell() }
+            cell.label.text = text
+            return cell
+        }
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return news[section].month
+        return "\(groupOfNews.news[section].year) \(groupOfNews.news[section].month)"
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        (view as! UITableViewHeaderFooterView).contentView.backgroundColor = UIColor(red: 255/255, green: 221/255, blue: 45/255, alpha: 1)
+        (view as! UITableViewHeaderFooterView).textLabel?.textColor = UIColor(red: 48/255, green: 48/255, blue: 56/255, alpha: 1)
     }
 }
 
 extension NewsViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (tableView.cellForRow(at: indexPath)?.reuseIdentifier == "cellWithExtraText") {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeViewController = storyboard.instantiateViewController(identifier: "AdditionalTextViewController") as AdditionalTextViewController
+            homeViewController.textForShow = groupOfNews.news[indexPath.section].newsItems[indexPath.row].additionalText
+            present(homeViewController, animated: true)
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
+    }
 }
