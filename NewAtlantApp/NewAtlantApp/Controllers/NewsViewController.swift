@@ -12,10 +12,11 @@ class NewsViewController: UIViewController {
     
     var groupOfNews = GroupOfNews()
     
-    public var newsView: NewsView! {
-        guard isViewLoaded else { return nil }
-        return (view as! NewsView)
-    }
+    @IBOutlet var newsView: NewsView!
+    //    public var newsView: NewsView! {
+//        guard isViewLoaded else { return nil }
+//        return (view as! NewsView)
+//    }
     
 
     override func viewDidLoad() {

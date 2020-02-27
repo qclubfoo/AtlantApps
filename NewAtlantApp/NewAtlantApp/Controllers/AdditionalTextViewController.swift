@@ -11,10 +11,12 @@ import UIKit
 class AdditionalTextViewController: UIViewController {
     
     public var textForShow: String?
-    public var additionalTextView: AdditionalTextView! {
-        guard isViewLoaded else { return nil }
-        return (view as! AdditionalTextView)
-    }
+    
+    @IBOutlet var additionalTextView: AdditionalTextView!
+    //    public var additionalTextView: AdditionalTextView! {
+//        guard isViewLoaded else { return nil }
+//        return (view as! AdditionalTextView)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

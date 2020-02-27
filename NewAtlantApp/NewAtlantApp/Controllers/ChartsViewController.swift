@@ -12,10 +12,13 @@ import Charts
 class ChartsViewController: UIViewController {
 
     public var allMetricks = MetricksGroup()
-    public var chartView: ChartView! {
-        guard isViewLoaded else { return nil }
-        return (view as! ChartView)
-    }
+    public var years = ["2019", "2020", "2021"]
+    
+    @IBOutlet var chartView: ChartView!
+    //    public var chartView: ChartView! {
+//        guard isViewLoaded else { return nil }
+//        return (view as! ChartView)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +58,7 @@ class ChartsViewController: UIViewController {
     }
    
     private func setupYearPicker(picker: UIPickerView) {
-        picker.isHidden = true
+//        picker.isHidden = true
     }
 
     private func setupMetrickPicker(picker: UIPickerView) {
@@ -165,30 +168,44 @@ class ChartsViewController: UIViewController {
 
 extension ChartsViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        if pickerView == chartView.metrickPicker {
+            return 2
+        } else {
+            return 1
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return allMetricks.metricks.count
+        if pickerView == chartView.metrickPicker {
+            return allMetricks.metricks.count
+        } else {
+            return years.count
+        }
     }
 }
 
 extension ChartsViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        allMetricks.metricks[row].name
+        if pickerView == chartView.metrickPicker {
+            return allMetricks.metricks[row].name
+        } else {
+            return years[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        guard let picker = chartView.metrickPicker else { return }
-        let first = picker.selectedRow(inComponent: 0)
-        let second = picker.selectedRow(inComponent: 1)
-        let lastNum = allMetricks.metricks.count - 1
-        
-        if first >= second {
-            if first == lastNum {
-                picker.selectRow(first, inComponent: 1, animated: true)
-            } else {
-                picker.selectRow(first + 1, inComponent: 1, animated: true)
+        if pickerView == chartView.metrickPicker {
+            //        guard let picker = chartView.metrickPicker else { return }
+            let first = pickerView.selectedRow(inComponent: 0)
+            let second = pickerView.selectedRow(inComponent: 1)
+            let lastNum = allMetricks.metricks.count - 1
+            
+            if first >= second {
+                if first == lastNum {
+                    pickerView.selectRow(first, inComponent: 1, animated: true)
+                } else {
+                    pickerView.selectRow(first + 1, inComponent: 1, animated: true)
+                }
             }
         }
     }
