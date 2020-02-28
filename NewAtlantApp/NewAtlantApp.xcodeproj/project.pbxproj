@@ -27,7 +27,6 @@
 		8422D4FB24054F46000EE5FE /* AdditionalTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4FA24054F46000EE5FE /* AdditionalTextViewController.swift */; };
 		8422D4FD24056F4E000EE5FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4FC24056F4E000EE5FE /* LoginView.swift */; };
 		8422D4FF24056F94000EE5FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D4FE24056F94000EE5FE /* LoginViewController.swift */; };
-		8422D50124057603000EE5FE /* CellWithoutExtraText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D50024057603000EE5FE /* CellWithoutExtraText.swift */; };
 		8422D5032407DDCF000EE5FE /* IndicatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D5022407DDCF000EE5FE /* IndicatorsViewController.swift */; };
 		8422D5052407DDF5000EE5FE /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D5042407DDF5000EE5FE /* IndicatorView.swift */; };
 		8422D5072407F19C000EE5FE /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422D5062407F19C000EE5FE /* Indicator.swift */; };
@@ -62,7 +61,6 @@
 		8422D4FA24054F46000EE5FE /* AdditionalTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalTextViewController.swift; sourceTree = "<group>"; };
 		8422D4FC24056F4E000EE5FE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8422D4FE24056F94000EE5FE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8422D50024057603000EE5FE /* CellWithoutExtraText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellWithoutExtraText.swift; sourceTree = "<group>"; };
 		8422D5022407DDCF000EE5FE /* IndicatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsViewController.swift; sourceTree = "<group>"; };
 		8422D5042407DDF5000EE5FE /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		8422D5062407F19C000EE5FE /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 				8422D4FC24056F4E000EE5FE /* LoginView.swift */,
 				8422D5042407DDF5000EE5FE /* IndicatorView.swift */,
 				8422D4F824054EC0000EE5FE /* AdditionalTextView.swift */,
-				8422D50024057603000EE5FE /* CellWithoutExtraText.swift */,
 				8422D50C2407F96C000EE5FE /* IndicatorCell.swift */,
 			);
 			path = Views;
@@ -327,7 +324,6 @@
 				841BC1A823FD5BAA00C1330E /* SceneDelegate.swift in Sources */,
 				8422D4FF24056F94000EE5FE /* LoginViewController.swift in Sources */,
 				8422D5052407DDF5000EE5FE /* IndicatorView.swift in Sources */,
-				8422D50124057603000EE5FE /* CellWithoutExtraText.swift in Sources */,
 				8422D50D2407F96C000EE5FE /* IndicatorCell.swift in Sources */,
 				8422D4F324054728000EE5FE /* NewsOfPeriod.swift in Sources */,
 				8422D4FD24056F4E000EE5FE /* LoginView.swift in Sources */,

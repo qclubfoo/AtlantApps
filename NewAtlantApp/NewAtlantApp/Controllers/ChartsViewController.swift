@@ -209,6 +209,20 @@ extension ChartsViewController: UIPickerViewDelegate {
             }
         }
     }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let str = allMetricks.metricks[row].name
+        let strStyle = NSMutableParagraphStyle()
+        strStyle.alignment = .center
+        let font = UIFont.systemFont(ofSize: 40, weight: .heavy)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .paragraphStyle: strStyle,
+            .font: font,
+            .foregroundColor: UIColor.red
+        ]
+        let attrStr = NSAttributedString(string: str, attributes: attributes)
+        return attrStr
+    }
 }
 
 extension ChartsViewController: ChartViewDelegate {

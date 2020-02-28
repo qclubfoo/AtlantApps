@@ -59,16 +59,17 @@ extension NewsViewController: UITableViewDataSource {
     }
     
     func getCell(withText text: String, withAddtitionalText additionalText: String?, inTableView tableView: UITableView) -> UITableViewCell {
+        var cell = UITableViewCell()
         if additionalText != nil {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellWithExtraText") else { return UITableViewCell() }
+            guard let newCell = tableView.dequeueReusableCell(withIdentifier: "cellWithExtraText") else { return cell }
+            cell = newCell
             cell.detailTextLabel?.text = "Нажмите на ячейку для дополнительной информации"
-            cell.textLabel?.text = text
-            return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellWithoutExtraText") as? CellWithoutExtraText else { return UITableViewCell() }
-            cell.label.text = text
-            return cell
+            guard let newCell = tableView.dequeueReusableCell(withIdentifier: "cellWithoutExtraText") else { return cell }
+            cell = newCell
         }
+        cell.textLabel?.text = text
+        return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

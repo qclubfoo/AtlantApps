@@ -11,6 +11,7 @@ import UIKit
 class LoginView: UIView {
 
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var touchIdButton: UIButton!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     

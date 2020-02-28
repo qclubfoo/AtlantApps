@@ -7,7 +7,8 @@
 //
 
 import UIKit
-//import NotificationCenter
+import LocalAuthentication
+
 
 class LoginViewController: UIViewController {
     
@@ -16,10 +17,30 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButton(loginView.loginButton)
+        
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(keyboardDidShow(notification:)),
+          name: UIResponder.keyboardDidShowNotification,
+          object: nil)
 
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(keyboardWillHide(_:)),
+          name: UIResponder.keyboardWillHideNotification,
+          object: nil)
+        
+        setupButton(loginView.loginButton)
+        setupButton(loginView.touchIdButton)
+    }
+    
+    
+    @IBAction func touchIdLogin(_ sender: Any) {
+        print("touch this")
+        biometricalLogin()
     }
     @IBAction func loginButton(_ sender: UIButton) {
+
         guard let login = loginView.loginTextField.text,
             let password = loginView.passwordTextField.text else { return }
         if login == "test" && password == "test" {
@@ -37,17 +58,27 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        NotificationCenter.default.addObserver(
-          self,
-          selector: #selector(keyboardDidShow(notification:)),
-          name: UIResponder.keyboardDidShowNotification,
-          object: nil)
-
-        NotificationCenter.default.addObserver(
-          self,
-          selector: #selector(keyboardWillHide(_:)),
-          name: UIResponder.keyboardWillHideNotification,
-          object: nil)
+        biometricalLogin()
+    }
+    
+    func biometricalLogin() {
+        let context = LAContext()
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Please authenticate to proceed.") { (success, error) in
+                if success {
+                    DispatchQueue.main.async {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let tabBarController = storyboard.instantiateViewController(identifier: "tabBarController") as TabBarViewController
+                        tabBarController.modalPresentationStyle = .fullScreen
+                        self.present(tabBarController, animated: true)
+                    }
+                } else {
+                    guard let error = error else { return }
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -85,7 +116,19 @@ class LoginViewController: UIViewController {
     }
     
     private func setupButton(_ button: UIButton) {
-        button.layer.cornerRadius = 10
+        if button == loginView.loginButton {
+            button.layer.cornerRadius = 10
+        } else {
+            if LAContext().biometricType == .faceID {
+                let image = UIImage(named: "faceID")
+                loginView.touchIdButton.contentMode = .scaleAspectFit
+                loginView.touchIdButton.setImage(image, for: .normal)
+                button.layer.cornerRadius = 10
+            } else {
+                loginView.touchIdButton.setImage(UIImage(named: "touchID"), for: .normal)
+                button.layer.cornerRadius = 16.5
+            }
+        }
     }
 
 }
@@ -105,5 +148,35 @@ extension LoginViewController: UITextFieldDelegate {
             loginButton(loginView.loginButton)
         }
         return true
+    }
+}
+
+extension LAContext {
+    enum BiometricType: String {
+        case none
+        case touchID
+        case faceID
+    }
+
+    var biometricType: BiometricType {
+        var error: NSError?
+
+        guard self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            // Capture these recoverable error thru Crashlytics
+            return .none
+        }
+
+        if #available(iOS 11.0, *) {
+            switch self.biometryType {
+            case .none:
+                return .none
+            case .touchID:
+                return .touchID
+            case .faceID:
+                return .faceID
+            }
+        } else {
+            return  self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touchID : .none
+        }
     }
 }
